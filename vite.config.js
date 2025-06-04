@@ -5,6 +5,7 @@ import path from "path";
 
 // https://vite.dev/config/
 export default defineConfig({
+  // dynamicImport 用于动态引入组件，在src\router\index.js中使用
   plugins: [react(), dynamicImport(/* 配置选项 */)],
   resolve: {
     alias: {

@@ -1,15 +1,20 @@
-import { createBrowserRouter } from 'react-router';
-import LazyComponent from '@/components/LazyComponent'; 
-const getResolvePath = (path) => `pages/${path}`;
+import { lazy } from "react";
+import { createHashRouter } from "react-router";
+import LazyComponent from "@/components/LazyComponent";
 
-const router = createBrowserRouter([
+function LazyFc(path) {
+  const lazyCom = lazy(() => import(`@/views/${path}`));
+  return LazyComponent(lazyCom);
+}
+
+const router = createHashRouter([
   {
-    path: '/',
-    Component: LazyComponent(getResolvePath('views/Home')),
+    path: "/",
+    Component: LazyFc("Home/index.jsx"),
   },
   {
-    path: '/about',
-    Component: LazyComponent(getResolvePath('views/About')),
+    path: "/about",
+    Component: LazyFc("About/index.jsx"),
   },
 ]);
 

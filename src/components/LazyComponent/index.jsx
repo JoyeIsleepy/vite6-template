@@ -1,12 +1,11 @@
 import React from "react";
 import Loading from "@/components/Loading";
 
-const LazyComponent = (resolvePath) => {
-  const Component = React.lazy(async () => await import(`@/${resolvePath}`));
+const LazyComponent = (LazyCom) => {
   return () => {
     return (
       <React.Suspense fallback={<Loading />}>
-        <Component />
+        <LazyCom />
       </React.Suspense>
     );
   };
