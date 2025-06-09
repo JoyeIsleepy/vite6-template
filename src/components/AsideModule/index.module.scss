@@ -1,0 +1,42 @@
+.asideModule {
+  display: grid;
+  grid-auto-rows: 1fr; /* 平均分配高度 */
+  gap: 10px; /* 可选，设置盒子之间的间距 */
+  height: 100%; 
+}
+
+.slideInFromRight {
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 1s ease, opacity 1s ease;
+  animation: slideInFromRight 1s ease forwards;
+}
+
+.slideInFromLeft {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 1s ease, opacity 1s ease;
+  animation: slideInFromLeft 1s ease forwards;
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
