@@ -1,26 +1,35 @@
-# 运行
+# vite6-template
 
-node推荐：18+ (18.17.0)
-安装命令推荐：pnpm (执行 npm i -g pnpm)
+## 项目运行
+- Node.js 版本推荐：18+ (18.17.0)
+- 包管理器推荐：pnpm (执行 `npm i -g pnpm`)
 
-
-## 文件目录  
-|-- public  (目录用于存放静态文件，例如 index.html 文件和图片等。)
-|-- src  
-  |-- assets 静态资源（包括图片，字体，通用样式文件）   
-  |-- components 公共基础组件   
-  |-- views (目录用于存放页面组件)  
-|-- index.html 
-|-- README.md  (说明文件)
-|-- tsconfig.json
-|-- vite.config.ts (vite配置文件 )
-|-- router (目录用于存放路由文件)
-|-- store  
-|-- views (目录用于存放页面组件)  
-|-- package.json  
+## 状态管理工具 zustand
+使用参考 https://juejin.cn/post/7203262276572823609 
 
 
-### 打包采用了最新rolldown-vite，如有构建问题，可考虑这方面影响
+## 项目结构
+```
+├── public/                # 静态资源目录
+├── src/
+│   ├── assets/           # 静态资源（图片、字体、通用样式文件）
+│   ├── components/        # 公共基础组件
+│   ├── router/           # 路由配置
+│   ├── store/            # 状态管理
+│   └── views/            # 页面组件
+├── index.html            # 入口HTML文件
+├── README.md             # 项目说明文档
+├── package.json          # 项目配置文件
+├── tsconfig.json         # TypeScript配置文件
+└── vite.config.ts        # Vite配置文件
+```
 
-### rollup/plugin-dynamic-import-vars 
-src\components\LazyComponent\index.jsx 动态引入文件
+## 技术栈
+- Vite 6
+- React 
+- Rollup
+- zustand
+
+## 构建说明
+- 使用最新版 Rollup + Vite 进行打包
+- 动态导入支持：`src/components/LazyComponent/index.jsx`
